@@ -438,18 +438,29 @@
             position: relative;
         }
         
-        .problem-title {
-            font-size: clamp(2rem, 5vw, 4rem);
-            font-weight: 900;
-            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 3s ease-in-out infinite;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
+     .problem-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    
+    /* Fallback para navegadores que no soportan gradientes */
+    color: #ff6b6b;
+    
+    /* Gradiente con mejores prefijos */
+    background: -webkit-linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+    background: -moz-linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+    background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+    background-size: 300% 300%;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-clip: text;
+    
+    animation: gradientShift 3s ease-in-out infinite;
+}
         
         @keyframes gradientShift {
             0%, 100% { background-position: 0% 50%; }
